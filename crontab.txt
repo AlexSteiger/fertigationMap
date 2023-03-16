@@ -1,0 +1,13 @@
+# For automatic up and download of the shapefiles to Geonode/Geoserver, 
+# install this crontab commands:
+
+*/10 * * * * /data/variableRateIrrigationMap/executer.sh > /tmp/cron.log 2>&1
+
+*/2 * * * * docker cp /data/variableRateIrrigationMap/currentSMC/current_ru_soil_moisture geoserver4my_geonode:/geoserver_data/data/data/geonode
+*/2 * * * * docker cp /data/variableRateIrrigationMap/currentSMC/current_bursa_soil_moisture geoserver4my_geonode:/geoserver_data/data/data/geonode
+*/2 * * * * docker cp /data/variableRateIrrigationMap/currentSMC/current_ugent_soil_moisture geoserver4my_geonode:/geoserver_data/data/data/geonode
+
+*/2 * * * * docker cp /data/variableRateIrrigationMap/irrigationMap/outputFiles/VRI_ru_application_map geoserver4my_geonode:/geoserver_data/data/data/geonode 
+*/2 * * * * docker cp /data/variableRateIrrigationMap/irrigationMap/outputFiles/VRI_bursa_application_map geoserver4my_geonode:/geoserver_data/data/data/geonode 
+*/2 * * * * docker cp /data/variableRateIrrigationMap/irrigationMap/outputFiles/VRI_ugent_application_map geoserver4my_geonode:/geoserver_data/data/data/geonode 
+

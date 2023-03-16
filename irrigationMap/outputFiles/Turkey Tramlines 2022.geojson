@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "Field1 Tramlines",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32635" } },
+"features": [
+{ "type": "Feature", "properties": { "id": null, "OID_": null, "Shape_Area": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 617854.034303325344808, 4444378.730577073059976 ], [ 617896.636282633058727, 4444175.578989795409143 ] ] ] } },
+{ "type": "Feature", "properties": { "id": 1, "OID_": 0, "Shape_Area": 8.9723770731499997 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 617745.722082171472721, 4444166.08059467561543 ], [ 617857.698784682550468, 4443634.956125934608281 ] ] ] } },
+{ "type": "Feature", "properties": { "id": 1, "OID_": 0, "Shape_Area": 8.9723770731499997 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 617793.565975914476439, 4444173.915657415054739 ], [ 617902.695278200320899, 4443656.296890288591385 ] ] ] } },
+{ "type": "Feature", "properties": { "id": 1, "OID_": 0, "Shape_Area": 8.9723770731499997 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 617839.009674945380539, 4444182.911490929313004 ], [ 617945.732238224009052, 4443676.708294613286853 ] ] ] } },
+{ "type": "Feature", "properties": { "id": 1, "OID_": 0, "Shape_Area": 8.9723770731499997 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 617885.824210741557181, 4444192.381926690228283 ], [ 617990.106387712876312, 4443697.753896028734744 ] ] ] } },
+{ "type": "Feature", "properties": { "id": null, "OID_": null, "Shape_Area": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 617807.5594168077223, 4444368.872267811559141 ], [ 617849.809313641861081, 4444166.072763007134199 ] ] ] } },
+{ "type": "Feature", "properties": { "id": null, "OID_": null, "Shape_Area": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 617760.732447816524655, 4444361.830618339590728 ], [ 617803.334427124238573, 4444159.735278482548892 ] ] ] } }
+]
+}
