@@ -80,7 +80,7 @@ for (i in 1:2) {
                 print(paste("Unable to connect to Database",university[i]))
         })
     
-	## Select the most current soil moisture data
+    ## Select the most current soil moisture data
     SQL1 <- "SELECT DISTINCT ON (device_id) device_id, soil_temp, soil_mc, soil_ec, lat, long FROM"
     SQL2 <- postgreSQLTable
     SQL3 <- "ORDER BY device_id, time desc; " 
