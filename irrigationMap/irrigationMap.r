@@ -136,14 +136,14 @@ for (i in 1:2) {
 
     vmc.raster.idw <- mask(vmc.raster.idw,sf.Field.Mask)
     ###################################################################	
-	## Calculations
+    ## Calculations
 
-	## Calculate FC_mm and PWP_mm
-	# FC [mm]  =  FC [%] * VW [g/cm3] * depth [mm] / 100
-	fc.spdf$FC_mm  <-  fc.spdf$FC * fc.spdf$VW_g_cm3 / 100 * depth[i]
+    ## Calculate FC_mm and PWP_mm
+    # FC [mm]  =  FC [%] * VW [g/cm3] * depth [mm] / 100
+    fc.spdf$FC_mm  <-  fc.spdf$FC * fc.spdf$VW_g_cm3 / 100 * depth[i]
 
-	# PWP [mm] = PWP [%] * VW [g/cm3] * depth [mm] / 100
-	fc.spdf$PWP_mm <-  fc.spdf$PWP * fc.spdf$VW_g_cm3 / 100 * depth[i]
+    # PWP [mm] = PWP [%] * VW [g/cm3] * depth [mm] / 100
+    fc.spdf$PWP_mm <-  fc.spdf$PWP * fc.spdf$VW_g_cm3 / 100 * depth[i]
 
     ## Interpolate the Field Capacity
     # IDW: Interpolate using a power value of 2 (idp=2.0)
@@ -175,23 +175,23 @@ for (i in 1:2) {
     # IN [mm] = FC [mm] * 0.9 - MC [mm]
     in.raster.idw <- fc.raster.idw * fill_up_rate[i] - mc.raster.idw - rain
 	
-	# AW [mm] = FC [mm] - PWP [mm]
-	aw.raster.idw <- fc.raster.idw - pwp.raster.idw
+    # AW [mm] = FC [mm] - PWP [mm]
+    aw.raster.idw <- fc.raster.idw - pwp.raster.idw
 	
-	# MAD [mm] = AW [mm] * MAD [%] + PWP [mm]
-	mad.raster.idw <- aw.raster.idw * MAD_Setting[i] + pwp.raster.idw
+    # MAD [mm] = AW [mm] * MAD [%] + PWP [mm]
+    mad.raster.idw <- aw.raster.idw * MAD_Setting[i] + pwp.raster.idw
 	
-	# Water left until MAD = MC [mm] - MAD [mm]
-	wl.raster.idw = mc.raster.idw - mad.raster.idw
+    # Water left until MAD = MC [mm] - MAD [mm]
+    wl.raster.idw = mc.raster.idw - mad.raster.idw
     
     ###################################################################
     # Plots
     pal1 <- colorRampPalette(c("white", "blue"))
     pal2 <- colorRampPalette(c("white", "brown"))
     pal3 <- colorRampPalette(c("white", "darkblue"))
-	pal4 <- colorRampPalette(c("red", "blue"))
-	par(mfrow=c(2,2)) #Multiplot 2x2 Grid
-	plot(vmc.raster.idw, col = pal1(n=7), main = paste(university[i],"Soil moisture content [%]"))
+    pal4 <- colorRampPalette(c("red", "blue"))
+    par(mfrow=c(2,2)) #Multiplot 2x2 Grid
+    plot(vmc.raster.idw, col = pal1(n=7), main = paste(university[i],"Soil moisture content [%]"))
     plot(sensor.spdf, add=TRUE)
     plot(mc.raster.idw, col = pal1(n=7), main = paste(university[i],"Soil moisture content [mm]"))
     plot(sensor.spdf, add=TRUE)
@@ -204,9 +204,9 @@ for (i in 1:2) {
 
     ###################################################################
     # Save the Application Map as a GeoTiff
-	folder <- paste("VRI_",university[i],"_application_map/",sep="")
+    folder <- paste("VRI_",university[i],"_application_map/",sep="")
     filename <- paste("VRI_",university[i],"_application_map",sep="")
-	pathAndName <- paste(folder ,filename,sep="")
+    pathAndName <- paste(folder ,filename,sep="")
 	       
 	## Export the Irrigation Map Shapefile
     # Create a new directory if it does not exist
@@ -214,17 +214,17 @@ for (i in 1:2) {
     if (!isExist) {
       dir.create(folder)
     }
-	in.spdf <- rasterToPolygons(in.raster.idw)
-	raster::shapefile(in.spdf, pathAndName, overwrite=TRUE)
+    in.spdf <- rasterToPolygons(in.raster.idw)
+    raster::shapefile(in.spdf, pathAndName, overwrite=TRUE)
     #writeRaster(in.raster.idw, filename, format = "GTiff", overwrite = TRUE)
 	
-	## Export "Water left until MAD" as a matrix:
-	wl.raster.idw <- aggregate(wl.raster.idw, fact=4) # aggregate fom 5x5 m to 
-	# Reproject to WGS84 + longlat
-	wl.raster.idw <- projectRaster(wl.raster.idw, crs="+proj=longlat +datum=WGS84")
-	# Transform Raster to Point matrix with format: "x, y, value"
-	wl.matrix.idw <- rasterToPoints(wl.raster.idw, spatial=FALSE)
-	colnames(wl.matrix.idw) <- c("x", "y", "wl")
-	filename <- paste("water_left_",university[i],".txt",sep="")
-	write.table(wl.matrix.idw, file = filename, sep = ",", row.names = FALSE, col.names = TRUE)
+    ## Export "Water left until MAD" as a matrix:
+    wl.raster.idw <- aggregate(wl.raster.idw, fact=4) # aggregate fom 5x5 m to 
+    # Reproject to WGS84 + longlat
+    wl.raster.idw <- projectRaster(wl.raster.idw, crs="+proj=longlat +datum=WGS84")
+    # Transform Raster to Point matrix with format: "x, y, value"
+    wl.matrix.idw <- rasterToPoints(wl.raster.idw, spatial=FALSE)
+    colnames(wl.matrix.idw) <- c("x", "y", "wl")
+    filename <- paste("water_left_",university[i],".txt",sep="")
+    write.table(wl.matrix.idw, file = filename, sep = ",", row.names = FALSE, col.names = TRUE)
 }  
