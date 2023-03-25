@@ -217,7 +217,7 @@ for (i in 1:2) {
     in.spdf <- rasterToPolygons(in.raster.idw)
     raster::shapefile(in.spdf, pathAndName, overwrite=TRUE)
     #writeRaster(in.raster.idw, filename, format = "GTiff", overwrite = TRUE)
-	
+
     ## Export "Water left until MAD" as a matrix:
     wl.raster.idw <- aggregate(wl.raster.idw, fact=4) # aggregate fom 5x5 m to 
     # Reproject to WGS84 + longlat
