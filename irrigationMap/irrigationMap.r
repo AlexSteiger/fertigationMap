@@ -208,7 +208,7 @@ for (i in 1:2) {
     filename <- paste("VRI_",university[i],"_application_map",sep="")
     pathAndName <- paste(folder ,filename,sep="")
 	       
-	## Export the Irrigation Map Shapefile
+    ## Export the Irrigation Map Shapefile
     # Create a new directory if it does not exist
     isExist <- file.exists(folder)
     if (!isExist) {
