@@ -35,7 +35,7 @@ def get_MZ(university,MZtype):
     URL5 = "&outputFormat=json"
     URL = URL1 + URL2 + URL4 + URL5
     #print(filename)
-    #print(URL)
+    print(URL)
     # Download the file.
     with urllib.request.urlopen(URL, context=ssl_context) as response, open(f"outputFiles/{filename}.geojson", "wb") as out_file:
         data = response.read()
@@ -201,8 +201,8 @@ for i in range(0,1):
 	axs[1,1].set_title(field[i] + ": Available Water (FC - PWP) [mm]")
 	axs[2,0].set_title(field[i] + ": Current Soil Moisture Content [mm]")
 	axs[2,1].set_title(field[i] + ": Water left until MAD [mm]")
-	axs[3,0].set_title(field[i] + ": Irrigation amount for next application [mm]")
-	axs[3,1].set_title(field[i] + ": Irrigation amount for next application [l/ha]")
+	axs[3,0].set_title(field[i] + ": Irrigation Need for next application [mm]")
+	axs[3,1].set_title(field[i] + ": Irrigation Need for next application [l/ha]")
 	axs[4,0].set_title(field[i] + ": Fertilization rate in relation to user rate [%]")
 	axs[4,1].set_title(field[i] + ": Fertilization amount for next application [l/ha]")	
 	
@@ -222,7 +222,7 @@ for i in range(0,1):
 
 	## Export the results
 	folder      = "outputFiles/" + uni[i] + "_application_map/"
-	filename    = uni[i] + "_application_map"
+	filename    = "application_map_" + uni[i]
 	pathAndName = folder + filename
 	pathAndName
 
