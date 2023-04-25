@@ -2,6 +2,9 @@
 
 import json
 import os
+import shutil
+import io
+import zipfile
 import requests
 import pandas as pd
 import ssl
@@ -221,9 +224,9 @@ for i in range(0,1):
 	#plt.show()
 
 	## Export the results
-	folder      = "outputFiles/" + uni[i] + "_application_map/"
+	folder      = "outputFiles/" + uni[i] + "_application_map"
 	filename    = "application_map_" + uni[i]
-	pathAndName = folder + filename
+	pathAndName = folder + "/" + filename
 	pathAndName
 
 	print(gdf.crs)
@@ -236,10 +239,19 @@ for i in range(0,1):
 	gdf_out = gdf[['fer_l_ha','irr_l_ha','geometry']] 
 
 	# Export as Shapefile
-	gdf_out.to_file(pathAndName+".shp", driver='ESRI Shapefile')
+	gdf_out.to_file(pathAndName+ ".shp", driver='ESRI Shapefile')
 
 	# Export as GeoJson
 	#gdf.to_file(pathAndName+".json", driver="GeoJSON")
+
+	## Upload the Geoserver
+	# create and open (temporary) zip file)
+	shutil.make_archive(filename, 'zip', folder)
+
+	with open(filename + ".zip", 'rb') as file:
+		zip_contents = file.read()
+		
+	#url = 'https://example.com/upload'
 
 	## Export "Water left until MAD" as a matrix
 	# Extract centroids of polygon and transform to form: WL_mm, x, y
