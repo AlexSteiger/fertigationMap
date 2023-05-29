@@ -31,16 +31,8 @@ lat = ["53.869024","40.137442","51.02979"]
 
 df_out = None
 
-for i in range(0, 1):
+for i in range(0, 3):
   print(postgreSQLTable[i])
-
-  # Locations:
-  # Bakir,Turkey Fields:
-  # lat = "40.137442"
-  # lon = "28.383499"
-  # Kassow,Germany Fields:
-  # lat = "53.869024"
-  # lon = "12.079214"
 
   # complete_url variable to store complete url address
   complete_url = base_url + "appid=" + api_key + "&lat=" + lat[i] + "&lon=" + lon[i] + "&exclude=minutely,hourly,alerts"
@@ -51,7 +43,7 @@ for i in range(0, 1):
   # convert json format data into python format data:
   x = response.json()
 
-  print(type(x))
+  #print(type(x))
   #print(json.dumps(x, sort_keys=True, indent=4))
 
   # read the response (x) into a dataframe:
@@ -85,17 +77,16 @@ for i in range(0, 1):
 
   # fill NaN with Null
   df = df.fillna(0)
-  print(df.dtypes)  
+
   # convert from unix time to python datetime:
   df['date'] = pd.to_datetime(df['date'],unit='s')
   df['date'] = df['date'].dt.date
 
-  print(df.dtypes)
+  #print(df.dtypes)
   #print(df)
 
   ## Upload to local database
-  alchemyEngine   = create_engine('postgresql+psycopg2://postgres:postgres@127.0.0.1:5432/postgres');
-        # create_engine(dialect+driver://username:password@host:port/database)
+  alchemyEngine = create_engine('postgresql+psycopg2://postgres:postgres@127.0.0.1:5432/postgres');
   postgreSQLConnection = alchemyEngine.connect();
   try:
     frame = df.to_sql(postgreSQLTable[i], alchemyEngine, index=False, if_exists='append')
@@ -118,12 +109,12 @@ for i in range(0, 1):
     df_out = pd.DataFrame(columns=list(df.columns))
   df_out = df_out.append(df)
 
-#print(df_out)
-
 ## Save as a shapefile
-folder = 'current_weather_forecast'
+# Transform python datetime object to an string (shapefile can only read str and numbers)
+df_out['date'] = df_out['date'].astype(str)
 
 # Create a new directory if it does not exist
+folder = 'current_weather_forecast'
 isExist = os.path.exists(folder)
 if not isExist:
   os.makedirs(folder)
@@ -134,38 +125,26 @@ gdf = gpd.GeoDataFrame(df_out, geometry=gpd.points_from_xy(df_out.lon, df_out.la
 # Add projection
 gdf.crs = 'epsg:4326'
 
-# Transform python datetime object to an string (shapefile cant read datetime format)
-#gdf['date'] = gdf['date'].dt.strftime("%Y-%m-%d")
-#gdf['date'] = gdf['date'].to_datetime().date()
-
-print(gdf.dtypes)
-print(gdf)
 # Export data to file
 print('exporting: current_weather_forecast.shp')
-#gdf.to_file(folder + '/current_weather_forecast.shp')
+gdf.to_file(folder + '/current_weather_forecast.shp')
 
 # Upload to geonode
-    
+url = 'https://geoportal.addferti.eu/geoserver/rest/workspaces/'
 
-#name = ['ru_weather_forecast','bursa_weather_forecast','ugent_weather_forecast']
-#url = 'https://geoportal.addferti.eu/geoserver/rest/workspaces/'
+try:
+  with open(folder + '/' + folder +'.zip', 'rb') as f:
+    data = f.read()
 
-#for i in range(0,3):
-#    datastore = name[i]
-#    folder = 'current_'+ name[i]
-#    try:
-#        with open(folder + '/current_' + name[i]+'.zip', 'rb') as f:
-#            data = f.read()
-
-#        response = requests.put(
-#            url + 'geonode/datastores/' + datastore + '/file.shp',
-#            headers={'Content-type': 'application/zip'},
-#            data=data,
-#            verify=False,
-#            auth=('admin', 'addferti')
-#        )
-#        print(folder + '/current_' + name[i] + ".zip uploaded" )
-#    except FileNotFoundError: 
-#        print(name[i] + " file not found")
+  response = requests.put(
+    url + 'geonode/datastores/' + folder + '/file.shp',
+    headers={'Content-type': 'application/zip'},
+    data=data,
+    verify=False,
+    auth=('admin', 'addferti')
+    )
+  print(folder +'.zip uploaded' )
+except FileNotFoundError:
+  print(folder + " file not found")
   
 
