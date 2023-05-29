@@ -5,6 +5,7 @@
 
 
 import os
+import shutil
 #import time
 from datetime import datetime
 from sqlalchemy import create_engine, text
@@ -24,6 +25,7 @@ base_url = "https://api.openweathermap.org/data/2.5/onecall?"
 
 # Variables
 location = ["Kassow","Karacabey","Les Moeres"]
+uni = ["ru","bursa","ugent"]
 postgreSQLTable = ["ru_weather","bursa_weather","ugent_weather"]
 
 lon = ["12.079214","28.383499","2.55874"]
@@ -104,47 +106,45 @@ for i in range(0, 3):
   finally:
     postgreSQLConnection.close();
   
-  # Append the data to df_out
-  if df_out is None:
-    df_out = pd.DataFrame(columns=list(df.columns))
-  df_out = df_out.append(df)
-
-## Save as a shapefile
-# Transform python datetime object to an string (shapefile can only read str and numbers)
-df_out['date'] = df_out['date'].astype(str)
-
-# Create a new directory if it does not exist
-folder = 'current_weather_forecast'
-isExist = os.path.exists(folder)
-if not isExist:
-  os.makedirs(folder)
- 
-# Transform DataFrame into a GeoDataFrame
-gdf = gpd.GeoDataFrame(df_out, geometry=gpd.points_from_xy(df_out.lon, df_out.lat))
-
-# Add projection
-gdf.crs = 'epsg:4326'
-
-# Export data to file
-print('exporting: current_weather_forecast.shp')
-gdf.to_file(folder + '/current_weather_forecast.shp')
-
-# Upload to geonode
-url = 'https://geoportal.addferti.eu/geoserver/rest/workspaces/'
-
-try:
-  with open(folder + '/' + folder +'.zip', 'rb') as f:
-    data = f.read()
-
-  response = requests.put(
-    url + 'geonode/datastores/' + folder + '/file.shp',
-    headers={'Content-type': 'application/zip'},
-    data=data,
-    verify=False,
-    auth=('admin', 'addferti')
-    )
-  print(folder +'.zip uploaded' )
-except FileNotFoundError:
-  print(folder + " file not found")
+  ## Save as a shapefile
+  folder = 'outputFiles/current_' + uni[i] + '_weather_forecast'
+  file = 'current_' + uni[i] + '_weather_forecast'
   
+  # Transform python datetime object to an string (shapefile can only read str and numbers)
+  df['date'] = df['date'].astype(str)
+
+  # Transform DataFrame into a GeoDataFrame
+  gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.lon, df.lat))
+
+  # Add projection
+  gdf.crs = 'epsg:4326'
+
+  # Create a new directory if it does not exist
+  isExist = os.path.exists(folder)
+  if not isExist:
+    os.makedirs(folder)
+
+  # Export data as shapefile
+  print('exporting: current_weather_forecast.shp')
+  gdf.to_file(folder , driver='ESRI Shapefile')
+
+  ## Upload the data
+  # create and open (temporary) zip file)
+  shutil.make_archive(folder, 'zip', folder)
+
+  # Upload to geonode
+  try:
+    with open(folder +'.zip', 'rb') as f:
+      data = f.read()
+    url = 'https://geoportal.addferti.eu/geoserver/rest/workspaces/'    
+    response = requests.put(
+      url + 'geonode/datastores/' + file + '/file.shp',
+      headers={'Content-type': 'application/zip'},
+      data=data,
+      verify=False,
+      auth=('admin', 'addferti')
+      )
+    print(folder +'.zip uploaded' )
+  except FileNotFoundError:
+    print(folder + " file not found")
 
