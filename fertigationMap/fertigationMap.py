@@ -95,7 +95,7 @@ def get_rain(university):
     # Select the most current soil moisture data
     SQL1 = "SELECT SUM(rain) FROM (SELECT rain FROM"
     SQL2 = postgreSQLTable
-    SQL3 = "ORDER BY date DESC LIMIT 7) subquery;"
+    SQL3 = "ORDER BY date DESC LIMIT 5) subquery;"
     SQL = SQL1 + " " + SQL2 + " " + SQL3
 
     rain_df = pd.read_sql_query(text(SQL),conn)
