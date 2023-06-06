@@ -29,7 +29,8 @@ for i in range(0,3):
 
   df = pd.read_sql(text(SQL),con=conn)
 
-  print(df)
+  #print(df.dtypes)
+  #print(df)
   
   # Transform DataFrame into a GeoDataFrame
   gdf = geopandas.GeoDataFrame(
@@ -56,6 +57,8 @@ for i in range(0,3):
   ## Upload the data
   # create zip file)
   shutil.make_archive(folder, 'zip', folder)
+
+  #print(gdf.dtypes)
 
   # Upload to geonode
   try:
