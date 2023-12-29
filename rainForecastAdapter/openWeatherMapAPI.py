@@ -32,8 +32,8 @@ lon = ["12.079214","28.383499","2.55874"]
 lat = ["53.869024","40.137442","51.02979"]
 
 df_out = None
-
-for i in range(0, 3):
+#for  i  in  [1,2,3]:
+for  i  in  [1,2,3]:
   print(postgreSQLTable[i])
 
   # complete_url variable to store complete url address
