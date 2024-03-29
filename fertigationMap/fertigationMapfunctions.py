@@ -82,6 +82,8 @@ def get_rain(university):
         
     rain_gdf = gpd.read_file(f"outputFiles/{filename}.geojson")
     rain_gdf = rain_gdf.drop('id', axis=1)
+    rain_gdf['date'] = pd.to_datetime(rain_gdf['date'])
+
     
     print("CRS of",filename,": ",rain_gdf.crs.to_epsg())
     rain_df = rain_gdf.drop('geometry',axis=1) #tranform gdf to a df
