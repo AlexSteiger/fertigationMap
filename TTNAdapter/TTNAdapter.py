@@ -22,7 +22,8 @@ theAPIKey = ['NNSXS.5IXRRQ74V3NDRIMSP4RQ6FZ5W5CEGL5P6QN457Q.JOIUJJ5TYRJDCMMHTZMH
              'NNSXS.FC4XATDRAUL22VSYSZYB7XPJQXHLZI534GVKKAY.QM5FGNQX7B6DNWE4CVD5ZYUQ6HUFQP72KX5KWTOSNTIG4TTFJX6A',
              'NNSXS.R7NNSNQE24QDNLJ7XIQD6CRBVYHCWO72C7E2REY.JN2I3FWELVV2E6CZCIAEKXNJVLB6DTJZ34JOPXMOSFTYL4PWP4DA']
 
-for i in range(0,3):
+#for i in [0,1,2]:
+for i in [0,1,2]:
     
     # Note the path you have to specify. Double note that it has be prefixed with up.
     theFields = "up.uplink_message.decoded_payload,up.uplink_message.locations"
@@ -47,31 +48,41 @@ for i in range(0,3):
     df = pd.read_json(theJSON)
     try:
         normalized_df = pd.concat([pd.DataFrame(pd.json_normalize(x)) for x in df['data']],ignore_index=True)
-
-            #print("column headers:")
-            #for col in normalized_df.columns:
-            #	  print(col)
+        print("column headers:")
+        #for col in normalized_df.columns:
+          #print(col)
             #-------------------------------------------
-            #result.end_device_ids.device_id                     --> Device ID
-            #result.received_at                                  --> Timestamp
-            #result.uplink_message.frm_payload
-            #result.uplink_message.decoded_payload.Bat
-            #result.uplink_message.decoded_payload.TempC_DS18B20
-            #result.uplink_message.decoded_payload.conduct_SOIL  --> Soil Conductivity (uS/cm) (mikroSiemens/cm)
-            #result.uplink_message.decoded_payload.temp_SOIL     --> Soil Temperature (°C)
-            #result.uplink_message.decoded_payload.water_SOIL    --> Soil Moisture (0-100%)
+            #result.end_device_ids.device_id                                                    --> Device ID
+            #result.received_at                                                                 --> Timestamp
+            #result.uplink_message.decoded_payload.battery_voltage.comment
+            #result.uplink_message.decoded_payload.battery_voltage.unit
+            #result.uplink_message.decoded_payload.battery_voltage.value
+            #result.uplink_message.decoded_payload.extra_temperature_sensor.comment
+            #result.uplink_message.decoded_payload.extra_temperature_sensor.unit
+            #result.uplink_message.decoded_payload.extra_temperature_sensor.value
+            #result.uplink_message.decoded_payload.soil_sensor.electrical_conductivity.comment
+            #result.uplink_message.decoded_payload.soil_sensor.electrical_conductivity.unit
+            #result.uplink_message.decoded_payload.soil_sensor.electrical_conductivity.value    --> Soil Conductivity (uS/cm) (mikroSiemens/cm)
+            #result.uplink_message.decoded_payload.soil_sensor.moisture.comment
+            #result.uplink_message.decoded_payload.soil_sensor.moisture.unit
+            #result.uplink_message.decoded_payload.soil_sensor.moisture.value                   --> Soil Moisture (0-100%)
+            #result.uplink_message.decoded_payload.soil_sensor.temperature.comment
+            #result.uplink_message.decoded_payload.soil_sensor.temperature.unit
+            #result.uplink_message.decoded_payload.soil_sensor.temperature.value                --> Soil Temperature (°C)
             #result.uplink_message.received_at
-            #result.uplink_message.locations.user.latitude       --> Lat
-            #result.uplink_message.locations.user.longitude      --> Long
+            #result.uplink_message.locations.user.latitude                                      --> Lat
+            #result.uplink_message.locations.user.longitude                                     --> Long
+            #result.uplink_message.locations.user.source
             #-------------------------------------------
+
 
         # subset of the normalized dataframe
         df = normalized_df[[
           "result.end_device_ids.device_id",
           "result.received_at",
-          "result.uplink_message.decoded_payload.conduct_SOIL",
-          "result.uplink_message.decoded_payload.temp_SOIL",
-          "result.uplink_message.decoded_payload.water_SOIL",
+          "result.uplink_message.decoded_payload.soil_sensor.electrical_conductivity.value",
+          "result.uplink_message.decoded_payload.soil_sensor.temperature.value",
+          "result.uplink_message.decoded_payload.soil_sensor.moisture.value",
           "result.uplink_message.locations.user.latitude",
           "result.uplink_message.locations.user.longitude"]]
 
@@ -80,9 +91,9 @@ for i in range(0,3):
         TTN_df = df.rename(columns={
           "result.end_device_ids.device_id":                    "device_id",
           "result.received_at":                                 "time",
-          "result.uplink_message.decoded_payload.conduct_SOIL": "soil_ec",
-          "result.uplink_message.decoded_payload.temp_SOIL":    "soil_temp",
-          "result.uplink_message.decoded_payload.water_SOIL":   "soil_mc",
+          "result.uplink_message.decoded_payload.soil_sensor.electrical_conductivity.value": "soil_ec",
+          "result.uplink_message.decoded_payload.soil_sensor.temperature.value":    "soil_temp",
+          "result.uplink_message.decoded_payload.soil_sensor.moisture.value":   "soil_mc",
           "result.uplink_message.locations.user.latitude":      "lat",
           "result.uplink_message.locations.user.longitude":     "long"})
 
