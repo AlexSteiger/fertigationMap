@@ -3,11 +3,10 @@
 from datetime import datetime
 import os
 import shutil
-import json
+#import json
 import requests
 import pandas as pd
 import geopandas
-
 from sqlalchemy import create_engine, text
 import os
 
@@ -18,11 +17,11 @@ import os
 postgreSQLTable = ['ru_soil_moisture','bursa_soil_moisture','ugent_soil_moisture']
 uni = ["ru","bursa","ugent"]
 alchemyEngine   = create_engine('postgresql+psycopg2://postgres:postgres@127.0.0.1:5432/postgres', pool_recycle=3600);
+
 conn = alchemyEngine.connect()
 
-for i in range(0,3):
-
-  SQL = ("SELECT DISTINCT ON (device_id) " 
+for i in [0]:
+  SQL = ("SELECT DISTINCT ON (device_id) "
        " device_id, time, soil_temp, soil_mc, soil_ec, lat, long "
        " FROM %s ORDER BY device_id, time desc;")%(postgreSQLTable[i])
   print(SQL)
@@ -31,7 +30,7 @@ for i in range(0,3):
 
   #print(df.dtypes)
   #print(df)
-  
+
   # Transform DataFrame into a GeoDataFrame
   gdf = geopandas.GeoDataFrame(
   df, geometry=geopandas.points_from_xy(df.long, df.lat))
@@ -64,18 +63,15 @@ for i in range(0,3):
   try:
     with open(folder +'.zip', 'rb') as f:
       data = f.read()
-    url = 'https://geoportal.addferti.eu/geoserver/rest/workspaces/'    
+    url = 'https://geoportal.addferti.eu/geoserver/rest/workspaces/'
     response = requests.put(
       url + 'geonode/datastores/' + file + '/file.shp',
       headers={'Content-type': 'application/zip'},
       data=data,
-      verify=False,
-      auth=('admin', 'addferti')
+      verify=True,
+      auth=('admin', 'geoserver')
       )
     print(folder +'.zip uploaded' )
   except FileNotFoundError:
     print(folder + " file not found")
 conn.close()
-
-
-

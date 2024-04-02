@@ -142,7 +142,7 @@ for  i  in  [1,2,3]:
       headers={'Content-type': 'application/zip'},
       data=data,
       verify=False,
-      auth=('admin', 'addferti')
+      auth=('admin', 'geoserver')
       )
     print(folder +'.zip uploaded' )
   except FileNotFoundError:

@@ -102,7 +102,7 @@ def get_rain(university):
     #print(rain_df)
     return rain_df
     
-for i in range(0,1):
+for i in [0,1,2]:
 	irr_MZ_gdf  = get_MZ(uni[i],"irr")
 	fer_MZ_gdf  = get_MZ(uni[i],"fer")
 	rain_df = get_rain(uni[i])

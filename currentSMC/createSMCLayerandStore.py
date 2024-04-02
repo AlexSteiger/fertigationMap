@@ -5,7 +5,7 @@ import requests
 name = ['ru_soil_moisture','bursa_soil_moisture','ugent_soil_moisture']
 url = 'https://geoportal.addferti.eu/geoserver/rest/workspaces/'
 
-for i in range(0,3):
+for i in [0,1,2]:
     datastore = 'current_' + name[i]
     folder = 'current_'+ name[i]
     try:
@@ -17,7 +17,7 @@ for i in range(0,3):
             headers={'Content-type': 'application/zip'},
             data=data,
             verify=False,
-            auth=('admin', 'addferti')
+            auth=('admin', 'geoserver')
         )
         print(folder + '/current_' + name[i] + ".zip uploaded" )
     except FileNotFoundError: 

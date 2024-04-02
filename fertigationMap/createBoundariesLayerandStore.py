@@ -21,7 +21,7 @@ for i in range(0,3):
             headers={'Content-type': 'application/zip'},
             data=data,
             verify=False,
-            auth=('admin', 'addferti')
+            auth=('admin', 'geoserver')
         )
         
         print(folder + '/current_' + file + ' uploaded' )
