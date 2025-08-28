@@ -17,28 +17,33 @@ from sqlalchemy import create_engine, text
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
+import matplotlib.patches as patches #for adding rectangles
 from matplotlib.colors import LinearSegmentedColormap
 
 # Machine Learning option:
 #from predict_smc import predict_smc_next_day 
 
-quit()
 uni           = ["ru","ugent","bursa"]
 field         = ["kassow_3","mortier","galloutibout"]
 fieldname     = ["Kassow-3","Mortier","Gallou Tibout"]
 
-## Settings (order: ru, ugent, bursa)
-#FK = 30%
-#PWP = 8%
+## Irrigation Settings:
 depth         = [300, 300, 300] # Irrigation depth/root depth in mm
 fill_up_rate  = [0.9, 0.9, 0.9] # Fill up rate in percent of field capacity (e.g. 0.9 = 90%)
 MAD_set       = [0.5,0.5,0.5]   # Management allowance depletion in percent (e.g. 0.5 = 50%)
 irr_user_rate = [30,30,30]
-fer_user_rate = [500,500,500]   # Fertilization user rate in l/ha
+Irr_min        = [5,10,10]
+Irr_max        = [40,50,50]
+bins           = "no"
 
+## Fertilization Settings:
 # In the MZs is either the column: 
+# "fer_MZ"    (1,2,3,4,5)
 # "fertility" (L, ML, M, MH, H)             --> fertility of each MZ
 # "fer_l_ha"  (eg. 209, 384, 732, 907, 558) --> fixed rate for each MZ
+# Priorities: "use_absolute_rates" > "fer_l_ha" from MZ > "fertility" from MZ
+
+fer_user_rate = [500,500,500]   # Fertilization user rate in l/ha
 
 # Fertility related to fertilization rates (eg. L (Low fertility) = 1.5*fer_rate)
 fer_rates_rel = {"ru":   {"L" : 1.5,"ML": 1.25,"M" : 1.0,"MH": 0.75,"H" : 0.5},
@@ -51,11 +56,6 @@ fer_rates_abs = {"ru":   {1 : 200, 2: 300, 3 : 550, 4: 732, 5 : 906, 99: 555},
                  "ugent":{1 : 200, 2: 300, 3 : 550, 4: 732, 5 : 906, 99: 555},
                  "bursa":{1 : 209, 2: 384, 3 : 732, 4: 907, 5 : 558, 99: 558}}
 
-# Priorities: "use_absolute_rates" > "fer_l_ha" from MZ > "fertility" from MZ
-
-Irr_min        = [5,10,10]
-Irr_max        = [40,50,50]
-bins           = "no"
 
 # Loop through specific indices in the array [0,1,2] = [ru,ugent,bursa]
 for  i  in  [0]:
@@ -83,9 +83,6 @@ for  i  in  [0]:
     folder      = "outputFiles/" + field[i] +  "_application_map"
     filename    = "application_map_" + field[i]
     pathAndName = folder + "/" + filename
-
-#INSERT INTO ugent_soil_moisture (device_id, time, soil_ec, soil_temp, soil_mc, lat, long)
-#VALUES ('uni-gent-22', '2024-06-25 15:43:03+00', 763, 21.11, 41.59, 50.98970247, 2.544487848);
 
     ## Merge all the data
     if fer_MZ_gdf is not None:
@@ -242,7 +239,6 @@ for  i  in  [0]:
       "WL_mm":1,"irr_l_ha":0,"fer_l_ha":0
      })
 
-
 	## Irrigation Plots
     if field[i] == "mortier":
         fig, axs = plt.subplots(nrows=3, ncols=3, figsize=(16,15))
@@ -254,7 +250,7 @@ for  i  in  [0]:
         fig, axs = plt.subplots(nrows=3, ncols=3, figsize=(16,24))
         print("plotting " + field[i])
     else:
-        fig, axs = plt.subplots(nrows=3, ncols=3, figsize=(15,12.5))  #19,16
+        fig, axs = plt.subplots(nrows=3, ncols=3, figsize=(12,10))
         print("plotting irrigation figures")
 
     # Colormaps
@@ -283,7 +279,7 @@ for  i  in  [0]:
     normWL  = mpl.colors.BoundaryNorm(boundsWL,  colorWL.N)
     normIN  = mpl.colors.BoundaryNorm(boundsIN,  plt.get_cmap('cool').N)
 
-    legend_set =  {'loc': 'upper right', 'prop': {'size': 12}}
+    legend_set =  {'loc': 'lower left', 'prop': {'size': 12}}
     gdf.plot(ax=axs[0,0], column="irr_mz",  cmap="viridis",legend="TRUE", categorical="true",legend_kwds=legend_set)
     gdf.plot(ax=axs[0,1], column="smc",     cmap=colorSMC,legend="TRUE",norm=normSMC)
     gdf.plot(ax=axs[0,2], column="CMC_mm",  cmap=colorSMC,legend="TRUE",norm=normCMC)
@@ -295,27 +291,41 @@ for  i  in  [0]:
     gdf.plot(ax=axs[2,2], column="Irr_mm",  cmap=colorIN,legend="TRUE", norm=normIN)
 
     axs[0,0].set_title("Irrigation MZs")
-    axs[0,1].set_title("Live soil moisture content [Vol-%]")
-    axs[0,2].set_title(f"Soil moisture content in {str(depth[i])} mm soil depth [mm]")
+    axs[0,1].set_title("Soil moisture content [Vol-%]")
+    axs[0,2].set_title("Soil moisture content [mm]")
     axs[1,0].set_title("FC [mm]")
     axs[1,1].set_title("PWP [mm]")
-    axs[1,2].set_title("Available water (FC-PWP) [mm]")
+    axs[1,2].set_title("AW (FC-PWP) [mm]")
     axs[2,0].set_title(f"Water left until MAD [mm],\n with MAD at {str(MAD_set[i]*100)} % of AW")
-    axs[2,1].set_title("Theoretical irrigation application rates [mm]")
+    axs[2,1].set_title("Irrigation application rates [mm]")
     axs[2,2].set_title(f"Irrigation application rates [mm]\n with min: {str(Irr_min[i])} mm and max: {str(Irr_max[i])} mm ")
     
-    axs[0,0].axis("off")
-    axs[0,1].axis("off")
-    axs[0,2].axis("off")
-    axs[1,0].axis("off")
-    axs[1,1].axis("off")
-    axs[1,2].axis("off")
-    axs[2,0].axis("off")
-    axs[2,1].axis("off")
-    axs[2,2].axis("off")
-    
-    fig.suptitle("Field: " + str(fieldname[i]) + " | " + "Date: 22.06.2023 14:23 | " + "Settings: Root Depth = "+ str(depth[i]) +"mm and Fill up Rate = "+str(fill_up_rate[i]*100) +"%") 
-    plt.tight_layout(pad=2.5)
+ #   axs[0,0].axis("off")
+ #   axs[0,1].axis("off")
+ #   axs[0,2].axis("off")
+ #   axs[1,0].axis("off")
+ #   axs[1,1].axis("off")
+ #   axs[1,2].axis("off")
+ #   axs[2,0].axis("off")
+ #   axs[2,1].axis("off")
+ #   axs[2,2].axis("off")
+  
+    for ax in axs.ravel():
+        ax.set_axis_off()
+        rect = patches.Rectangle(
+            (0,0), 1, 1,
+            transform=ax.transAxes,
+            linewidth=1.5,
+            edgecolor="black",
+            facecolor="none",
+            zorder=10
+        )
+    ax.add_patch(rect)
+
+  
+    fig.suptitle("Field: " + str(fieldname[i]) + " | " + "Date: 22.06.2023 14:23 | " + "Settings: Root Depth = "+ str(depth[i]) +"mm and Fill up Rate = "+str(fill_up_rate[i]*100) +"%"
+                 ,fontsize=14, fontweight="bold" ) 
+    plt.tight_layout(pad=1.5)
     plt.savefig("outputFiles/" + field[i] + "_irr.png")
     plt.savefig("outputFiles/irrigation_charts/" + field[i] + "_irr_" + datetime.datetime.now().strftime('%Y-%m-%d %H %M %S') + ".png")
 
@@ -330,22 +340,22 @@ if fer_MZ_gdf is not None or MZ_gdf is not None:
     fertility_order = ["L", "ML", "M", "MH", "H"]
     gdf["fertility"] = pd.Categorical(gdf["fertility"], categories=fertility_order, ordered=True)
 
-    fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(15,5))
-    legend_set = {'loc': 'upper right', 'prop': {'size': 12}}
+    fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(12,4))
+    legend_set = {'loc': 'lower left', 'prop': {'size': 12}, 'facecolor': 'lightgray', 'edgecolor': 'black'}
 
     gdf.plot(ax=axs[0], column="fer_mz", cmap='viridis', legend=True, categorical=True, legend_kwds=legend_set)
     gdf.plot(ax=axs[1], column="fertility", cmap='summer_r', legend=True, categorical=True, legend_kwds=legend_set)
     gdf.plot(ax=axs[2], column="fer_l_ha", cmap='Purples', legend=True, categorical=True, legend_kwds=legend_set)
 
-    fig.suptitle(f"Field: {fieldname[i]} | Date: 22.06.2023 14:23")
+    for ax in axs:
+        ax.axis("off")
+
+    fig.suptitle(f"Field: {fieldname[i]} | Date: 22.06.2023 14:23",fontsize=14, fontweight="bold")
     axs[0].set_title("Fertilization MZs")
     axs[1].set_title("Fertility")
     axs[2].set_title("Fertilization rates [l/ha]")
 
-    for ax in axs:
-        ax.axis("off")
-
-    plt.tight_layout()
+    plt.tight_layout(pad=1.5)
     plt.savefig(f"outputFiles/fertilization_charts/{field[i]}_fer_{datetime.datetime.now().strftime('%Y-%m-%d %H %M %S')}.png")
 
 
