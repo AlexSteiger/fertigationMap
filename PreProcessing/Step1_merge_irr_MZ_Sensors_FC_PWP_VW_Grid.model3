@@ -1,0 +1,2036 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option name="children" type="Map">
+    <Option name="native:createspatialindex_2" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:createspatialindex" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1003" name="component_pos_x" type="double"/>
+        <Option value="363" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Create spatial index (Add MZ irrigation Class)" name="component_description" type="QString"/>
+      <Option value="37.82713890177865" name="component_height" type="double"/>
+      <Option value="1721.8683149857795" name="component_pos_x" type="double"/>
+      <Option value="827.8572835480084" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:createspatialindex_2" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="qgis:joinbylocationsummary_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbyattribute_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbyattribute" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="977" name="component_pos_x" type="double"/>
+        <Option value="391.5" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="MZ Class 1 (Extract by attribute)" name="component_description" type="QString"/>
+      <Option value="41" name="component_height" type="double"/>
+      <Option value="1055.1254997185686" name="component_pos_x" type="double"/>
+      <Option value="652.3062749859283" name="component_pos_y" type="double"/>
+      <Option value="160" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbyattribute_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="irr_Mz_majority" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:createspatialindex_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="OPERATOR" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="0" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="VALUE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbyattribute_2" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbyattribute" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1112" name="component_pos_x" type="double"/>
+        <Option value="439" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="MZ Class 2 (Extract by attribute)" name="component_description" type="QString"/>
+      <Option value="41" name="component_height" type="double"/>
+      <Option value="1223.8376499155706" name="component_pos_x" type="double"/>
+      <Option value="742.9188249577853" name="component_pos_y" type="double"/>
+      <Option value="160" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbyattribute_2" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="irr_Mz_majority" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:createspatialindex_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="OPERATOR" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="0" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="VALUE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="2" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbyattribute_3" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbyattribute" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1202" name="component_pos_x" type="double"/>
+        <Option value="459" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="MZ Class 3 (Extract by attribute)" name="component_description" type="QString"/>
+      <Option value="41" name="component_height" type="double"/>
+      <Option value="1420" name="component_pos_x" type="double"/>
+      <Option value="830.5" name="component_pos_y" type="double"/>
+      <Option value="160" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbyattribute_3" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="irr_Mz_majority" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:createspatialindex_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="OPERATOR" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="0" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="VALUE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="3" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbyattribute_4" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbyattribute" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1285.4333357980963" name="component_pos_x" type="double"/>
+        <Option value="473.9668990954036" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="MZ Class 4 (Extract by attribute)" name="component_description" type="QString"/>
+      <Option value="41" name="component_height" type="double"/>
+      <Option value="1620" name="component_pos_x" type="double"/>
+      <Option value="919.5" name="component_pos_y" type="double"/>
+      <Option value="160" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbyattribute_4" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="irr_Mz_majority" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:createspatialindex_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="OPERATOR" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="0" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="VALUE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="4" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbyattribute_5" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbyattribute" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1397.5265479884904" name="component_pos_x" type="double"/>
+        <Option value="498.6479733391601" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="MZ Class 5 (Extract by attribute)" name="component_description" type="QString"/>
+      <Option value="41" name="component_height" type="double"/>
+      <Option value="1801" name="component_pos_x" type="double"/>
+      <Option value="1010.5" name="component_pos_y" type="double"/>
+      <Option value="160" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbyattribute_5" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="irr_Mz_majority" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:createspatialindex_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="OPERATOR" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="0" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="VALUE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="5" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbylocation_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbylocation" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1245" name="component_pos_x" type="double"/>
+        <Option value="484.5" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Extract Sensors inside MZ 1 (Extract by location)" name="component_description" type="QString"/>
+      <Option value="45" name="component_height" type="double"/>
+      <Option value="825" name="component_pos_x" type="double"/>
+      <Option value="652.5" name="component_pos_y" type="double"/>
+      <Option value="210" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbylocation_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="sensor_locations_as_points" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INTERSECT" type="List">
+          <Option type="Map">
+            <Option value="native:extractbyattribute_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREDICATE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option value="0" type="int"/>
+            </Option>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbylocation_10" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbylocation" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1403.122764502038" name="component_pos_x" type="double"/>
+        <Option value="1676.712298679129" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Extract FC, PWP, VW inside MZ 4 (Extract by location)" name="component_description" type="QString"/>
+      <Option value="45" name="component_height" type="double"/>
+      <Option value="825" name="component_pos_x" type="double"/>
+      <Option value="1473.5" name="component_pos_y" type="double"/>
+      <Option value="210" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbylocation_10" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="fc_pwp_vw_as_points" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INTERSECT" type="List">
+          <Option type="Map">
+            <Option value="native:joinbynearest_4" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREDICATE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option value="0" type="int"/>
+            </Option>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbylocation_2" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbylocation" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1489" name="component_pos_x" type="double"/>
+        <Option value="523" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Extract Sensors inside MZ 2 (Extract by location)" name="component_description" type="QString"/>
+      <Option value="45" name="component_height" type="double"/>
+      <Option value="825" name="component_pos_x" type="double"/>
+      <Option value="742.5" name="component_pos_y" type="double"/>
+      <Option value="210" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbylocation_2" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="sensor_locations_as_points" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INTERSECT" type="List">
+          <Option type="Map">
+            <Option value="native:extractbyattribute_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREDICATE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option value="0" type="int"/>
+            </Option>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbylocation_3" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbylocation" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1569" name="component_pos_x" type="double"/>
+        <Option value="544" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Extract Sensors inside MZ 3 (Extract by location)" name="component_description" type="QString"/>
+      <Option value="45" name="component_height" type="double"/>
+      <Option value="825" name="component_pos_x" type="double"/>
+      <Option value="832.5" name="component_pos_y" type="double"/>
+      <Option value="210" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbylocation_3" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="sensor_locations_as_points" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INTERSECT" type="List">
+          <Option type="Map">
+            <Option value="native:extractbyattribute_3" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREDICATE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option value="0" type="int"/>
+            </Option>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbylocation_4" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbylocation" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1764.8880213405928" name="component_pos_x" type="double"/>
+        <Option value="609.1509203581969" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Extract Sensors inside MZ 4 (Extract by location)" name="component_description" type="QString"/>
+      <Option value="45" name="component_height" type="double"/>
+      <Option value="825" name="component_pos_x" type="double"/>
+      <Option value="922.5" name="component_pos_y" type="double"/>
+      <Option value="210" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbylocation_4" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="sensor_locations_as_points" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INTERSECT" type="List">
+          <Option type="Map">
+            <Option value="native:extractbyattribute_4" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREDICATE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option value="0" type="int"/>
+            </Option>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbylocation_5" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbylocation" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1882.6620969572339" name="component_pos_x" type="double"/>
+        <Option value="665.5425473037595" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Extract Sensors inside MZ 5 (Extract by location)" name="component_description" type="QString"/>
+      <Option value="45" name="component_height" type="double"/>
+      <Option value="825" name="component_pos_x" type="double"/>
+      <Option value="1012.5" name="component_pos_y" type="double"/>
+      <Option value="210" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbylocation_5" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="sensor_locations_as_points" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INTERSECT" type="List">
+          <Option type="Map">
+            <Option value="native:extractbyattribute_5" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREDICATE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option value="0" type="int"/>
+            </Option>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbylocation_6" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbylocation" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1704.3625894396819" name="component_pos_x" type="double"/>
+        <Option value="1685.880143103491" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Extract FC, PWP, VW inside MZ 5 (Extract by location)" name="component_description" type="QString"/>
+      <Option value="45" name="component_height" type="double"/>
+      <Option value="825" name="component_pos_x" type="double"/>
+      <Option value="1561.5" name="component_pos_y" type="double"/>
+      <Option value="210" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbylocation_6" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="fc_pwp_vw_as_points" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INTERSECT" type="List">
+          <Option type="Map">
+            <Option value="native:joinbynearest_5" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREDICATE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option value="0" type="int"/>
+            </Option>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbylocation_7" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbylocation" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1354.1210717024128" name="component_pos_x" type="double"/>
+        <Option value="1510.7747480622163" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Extract FC, PWP, VW inside MZ 2 (Extract by location)" name="component_description" type="QString"/>
+      <Option value="45" name="component_height" type="double"/>
+      <Option value="825" name="component_pos_x" type="double"/>
+      <Option value="1294.5" name="component_pos_y" type="double"/>
+      <Option value="210" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbylocation_7" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="fc_pwp_vw_as_points" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INTERSECT" type="List">
+          <Option type="Map">
+            <Option value="native:joinbynearest_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREDICATE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option value="0" type="int"/>
+            </Option>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbylocation_8" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbylocation" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1353.0073968660577" name="component_pos_x" type="double"/>
+        <Option value="1509.6610732258612" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Extract FC, PWP, VW inside MZ 3 (Extract by location)" name="component_description" type="QString"/>
+      <Option value="45" name="component_height" type="double"/>
+      <Option value="825" name="component_pos_x" type="double"/>
+      <Option value="1384.5" name="component_pos_y" type="double"/>
+      <Option value="210" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbylocation_8" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="fc_pwp_vw_as_points" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INTERSECT" type="List">
+          <Option type="Map">
+            <Option value="native:joinbynearest_3" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREDICATE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option value="0" type="int"/>
+            </Option>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbylocation_9" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:extractbylocation" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1201" name="component_pos_x" type="double"/>
+        <Option value="1426.5" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Extract FC, PWP, VW inside MZ 1 (Extract by location)" name="component_description" type="QString"/>
+      <Option value="45" name="component_height" type="double"/>
+      <Option value="825" name="component_pos_x" type="double"/>
+      <Option value="1206.5" name="component_pos_y" type="double"/>
+      <Option value="210" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:extractbylocation_9" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="fc_pwp_vw_as_points" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INTERSECT" type="List">
+          <Option type="Map">
+            <Option value="native:joinbynearest_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREDICATE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option value="0" type="int"/>
+            </Option>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinbynearest_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinbynearest" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1555" name="component_pos_x" type="double"/>
+        <Option value="747" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="ADD Sensor to Class 1 (Join attributes by nearest)" name="component_description" type="QString"/>
+      <Option value="59.999999999999915" name="component_height" type="double"/>
+      <Option value="1020" name="component_pos_x" type="double"/>
+      <Option value="1110" name="component_pos_y" type="double"/>
+      <Option value="179.99999999999997" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinbynearest_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:extractbyattribute_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option value="native:extractbylocation_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MAX_DISTANCE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="NEIGHBORS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinbynearest_10" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinbynearest" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="2091.5067902416035" name="component_pos_x" type="double"/>
+        <Option value="876.9908928482098" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="ADD FC to MZ 5 (Join attributes by nearest)" name="component_description" type="QString"/>
+      <Option value="45.177297525208125" name="component_height" type="double"/>
+      <Option value="1806.036551979568" name="component_pos_x" type="double"/>
+      <Option value="1244.6364511811094" name="component_pos_y" type="double"/>
+      <Option value="169.53944601272127" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinbynearest_10" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:joinbynearest_5" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option value="native:extractbylocation_6" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MAX_DISTANCE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="NEIGHBORS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinbynearest_2" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinbynearest" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1740" name="component_pos_x" type="double"/>
+        <Option value="787" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="ADD Sensor to Class 2 (Join attributes by nearest)" name="component_description" type="QString"/>
+      <Option value="60" name="component_height" type="double"/>
+      <Option value="1220" name="component_pos_x" type="double"/>
+      <Option value="1110" name="component_pos_y" type="double"/>
+      <Option value="180" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinbynearest_2" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:extractbyattribute_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option value="native:extractbylocation_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MAX_DISTANCE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="NEIGHBORS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinbynearest_3" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinbynearest" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1951" name="component_pos_x" type="double"/>
+        <Option value="821" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="ADD Sensor to Class 3 (Join attributes by nearest)" name="component_description" type="QString"/>
+      <Option value="60.00000000000006" name="component_height" type="double"/>
+      <Option value="1420" name="component_pos_x" type="double"/>
+      <Option value="1110" name="component_pos_y" type="double"/>
+      <Option value="180" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinbynearest_3" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:extractbyattribute_3" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option value="native:extractbylocation_3" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MAX_DISTANCE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="NEIGHBORS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinbynearest_4" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinbynearest" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="2074.4887726821644" name="component_pos_x" type="double"/>
+        <Option value="833.3484042142933" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="ADD Sensor to Class 4 (Join attributes by nearest)" name="component_description" type="QString"/>
+      <Option value="60.00000000000006" name="component_height" type="double"/>
+      <Option value="1620" name="component_pos_x" type="double"/>
+      <Option value="1110" name="component_pos_y" type="double"/>
+      <Option value="180" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinbynearest_4" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:extractbyattribute_4" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option value="native:extractbylocation_4" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MAX_DISTANCE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="NEIGHBORS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinbynearest_5" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinbynearest" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="2245.7802098919688" name="component_pos_x" type="double"/>
+        <Option value="868.6751970629518" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="ADD Sensor to Class 5 (Join attributes by nearest)" name="component_description" type="QString"/>
+      <Option value="60.00000000000006" name="component_height" type="double"/>
+      <Option value="1820" name="component_pos_x" type="double"/>
+      <Option value="1110" name="component_pos_y" type="double"/>
+      <Option value="180" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinbynearest_5" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:extractbyattribute_5" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option value="native:extractbylocation_5" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MAX_DISTANCE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="NEIGHBORS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinbynearest_6" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinbynearest" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1630.648377228672" name="component_pos_x" type="double"/>
+        <Option value="779.6303821003517" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="ADD FC to MZ 1 (Join attributes by nearest)" name="component_description" type="QString"/>
+      <Option value="50" name="component_height" type="double"/>
+      <Option value="1060.649400337718" name="component_pos_x" type="double"/>
+      <Option value="1538.068225295503" name="component_pos_y" type="double"/>
+      <Option value="179.99999999999997" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinbynearest_6" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:joinbynearest_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option value="native:extractbylocation_9" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MAX_DISTANCE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="NEIGHBORS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinbynearest_7" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinbynearest" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1802.6296278020618" name="component_pos_x" type="double"/>
+        <Option value="816.360142341767" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="ADD FC to MZ 2 (Join attributes by nearest)" name="component_description" type="QString"/>
+      <Option value="48" name="component_height" type="double"/>
+      <Option value="1248.0286372115327" name="component_pos_x" type="double"/>
+      <Option value="1456.6494003377177" name="component_pos_y" type="double"/>
+      <Option value="161.68077526735985" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinbynearest_7" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:joinbynearest_2" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option value="native:extractbylocation_7" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MAX_DISTANCE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="NEIGHBORS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinbynearest_8" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinbynearest" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1893.2403219744679" name="component_pos_x" type="double"/>
+        <Option value="825.8048690924818" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="ADD FC to MZ 3 (Join attributes by nearest)" name="component_description" type="QString"/>
+      <Option value="47" name="component_height" type="double"/>
+      <Option value="1433.540848114409" name="component_pos_x" type="double"/>
+      <Option value="1380.0498001125727" name="component_pos_y" type="double"/>
+      <Option value="163.15539696053995" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinbynearest_8" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:joinbynearest_3" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option value="native:extractbylocation_8" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MAX_DISTANCE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="NEIGHBORS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinbynearest_9" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:joinbynearest" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="2013.2911059632243" name="component_pos_x" type="double"/>
+        <Option value="854.1820680612336" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="ADD FC to MZ 4 (Join attributes by nearest)" name="component_description" type="QString"/>
+      <Option value="47" name="component_height" type="double"/>
+      <Option value="1618.371762563322" name="component_pos_x" type="double"/>
+      <Option value="1315.850599662282" name="component_pos_y" type="double"/>
+      <Option value="170.3560750985009" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:joinbynearest_9" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:joinbynearest_4" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option value="native:extractbylocation_10" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="MAX_DISTANCE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="NEIGHBORS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="1" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:mergevectorlayers_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:mergevectorlayers" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1937.5" name="component_pos_x" type="double"/>
+        <Option value="854" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Merge" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="1407.7124999999999" name="component_pos_x" type="double"/>
+      <Option value="1537.2224999999996" name="component_pos_y" type="double"/>
+      <Option value="90" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:mergevectorlayers_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="CRS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="LAYERS" type="List">
+          <Option type="Map">
+            <Option value="native:joinbynearest_6" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+          <Option type="Map">
+            <Option value="native:joinbynearest_7" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+          <Option type="Map">
+            <Option value="native:joinbynearest_8" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+          <Option type="Map">
+            <Option value="native:joinbynearest_9" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+          <Option type="Map">
+            <Option value="native:joinbynearest_10" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:renametablefield_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:renametablefield" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1480.7339843226198" name="component_pos_x" type="double"/>
+        <Option value="967.0098935784279" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Rename fields" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="1642.459523252849" name="component_pos_x" type="double"/>
+      <Option value="1441.3539993214367" name="component_pos_y" type="double"/>
+      <Option value="150" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:renametablefield_1" name="id" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="irr_MZ as Grid with Sensor, FC and PWP" type="Map">
+          <Option value="native:renametablefield_1" name="child_id" type="QString"/>
+          <Option value="" name="color" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option value="" name="color" type="QString"/>
+            <Option value="" name="component_description" type="QString"/>
+            <Option value="60" name="component_height" type="double"/>
+            <Option value="0" name="component_pos_x" type="double"/>
+            <Option value="0" name="component_pos_y" type="double"/>
+            <Option value="100" name="component_width" type="double"/>
+            <Option value="true" name="outputs_collapsed" type="bool"/>
+            <Option value="true" name="parameters_collapsed" type="bool"/>
+          </Option>
+          <Option value="irr_MZ as Grid with Sensor, FC and PWP" name="component_description" type="QString"/>
+          <Option value="64.72177832176861" name="component_height" type="double"/>
+          <Option value="1755.4874712148794" name="component_pos_x" type="double"/>
+          <Option value="1516.0041492192765" name="component_pos_y" type="double"/>
+          <Option value="160.66001919008008" name="component_width" type="double"/>
+          <Option name="default_value" type="Map">
+            <Option value="QgsProcessingOutputLayerDefinition" name="class" type="QString"/>
+            <Option name="create_options" type="Map">
+              <Option value="windows-1252" name="fileEncoding" type="QString"/>
+            </Option>
+            <Option name="sink" type="Map">
+              <Option value="true" name="active" type="bool"/>
+              <Option value="1" name="type" type="int"/>
+              <Option value="TEMPORARY_OUTPUT" name="val" type="QString"/>
+            </Option>
+          </Option>
+          <Option value="true" name="mandatory" type="bool"/>
+          <Option value="irr_MZ as Grid with Sensor, FC and PWP" name="name" type="QString"/>
+          <Option value="OUTPUT" name="output_name" type="QString"/>
+          <Option value="true" name="outputs_collapsed" type="bool"/>
+          <Option value="true" name="parameters_collapsed" type="bool"/>
+        </Option>
+      </Option>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="irr_MZ_majority" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:retainfields_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="NEW_NAME" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="irr_MZ" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:retainfields_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="native:retainfields" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="1682.5" name="component_pos_x" type="double"/>
+        <Option value="947" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Retain fields" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="1532.79" name="component_pos_x" type="double"/>
+      <Option value="1521.7012499999998" name="component_pos_y" type="double"/>
+      <Option value="120" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="native:retainfields_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELDS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="irr_MZ_majority" type="QString"/>
+              <Option value="device_id" type="QString"/>
+              <Option value="FC" type="QString"/>
+              <Option value="PWP" type="QString"/>
+              <Option value="VW_g_cm3" type="QString"/>
+              <Option value="row" type="QString"/>
+              <Option value="column" type="QString"/>
+              <Option value="field_id" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="native:mergevectorlayers_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="qgis:joinbylocationsummary_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="qgis:joinbylocationsummary" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="628" name="component_pos_x" type="double"/>
+        <Option value="186" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Add MZ irrigation Class to the Grid (Join attributes by location (summary))" name="component_description" type="QString"/>
+      <Option value="61" name="component_height" type="double"/>
+      <Option value="1687.33770923127" name="component_pos_x" type="double"/>
+      <Option value="698.9073951613665" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="qgis:joinbylocationsummary_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="false" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="false" name="static_value" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="grid_polygon" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="JOIN" type="List">
+          <Option type="Map">
+            <Option value="qgis:voronoipolygons_1" name="child_id" type="QString"/>
+            <Option value="OUTPUT" name="output_name" type="QString"/>
+            <Option value="1" name="source" type="int"/>
+          </Option>
+        </Option>
+        <Option name="JOIN_FIELDS" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="PREDICATE" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option value="0" type="int"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="SUMMARIES" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option name="static_value" type="List">
+              <Option value="10" type="int"/>
+            </Option>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="qgis:voronoipolygons_1" type="Map">
+      <Option value="true" name="active" type="bool"/>
+      <Option name="alg_config"/>
+      <Option value="qgis:voronoipolygons" name="alg_id" type="QString"/>
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="684.7543961728668" name="component_pos_x" type="double"/>
+        <Option value="181.15450786849794" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="Voronoi polygons" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="1472.1573363143423" name="component_pos_x" type="double"/>
+      <Option value="606.2849819581796" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option name="dependencies"/>
+      <Option value="qgis:voronoipolygons_1" name="id" type="QString"/>
+      <Option name="outputs"/>
+      <Option value="false" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="BUFFER" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="5" name="static_value" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option value="mzs_as_points" name="parameter_name" type="QString"/>
+            <Option value="0" name="source" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="designerParameterValues" type="Map">
+    <Option value="Bodentypen_Stenon_32632_0fc37556_ba84_46ac_9787_1514814a7802" name="fc_locations" type="QString"/>
+    <Option value="ru_grid_32633_4148e532_abeb_4109_9006_87f751285dff" name="grid_125x2m" type="QString"/>
+    <Option name="irr_mz_as_grid_with_sensor_and_fc" type="QgsProcessingOutputLayerDefinition">
+      <Option type="Map">
+        <Option name="create_options" type="Map">
+          <Option value="System" name="fileEncoding" type="QString"/>
+        </Option>
+        <Option name="sink" type="Map">
+          <Option value="true" name="active" type="bool"/>
+          <Option value="1" name="type" type="int"/>
+          <Option value="TEMPORARY_OUTPUT" name="val" type="QString"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option value="2023_ru_irrigation_MZ_4_zones_6689f25f_8307_4dd5_be9f_803824fe69e0" name="mzs_as_points" type="QString"/>
+    <Option value="sensor_Planung_022ffc99_beab_4d98_a6ea_a5859b31b226" name="sensor_locations_as_points" type="QString"/>
+  </Option>
+  <Option name="groupBoxes"/>
+  <Option name="help"/>
+  <Option value="Version2" name="internal_version" type="QString"/>
+  <Option name="modelVariables"/>
+  <Option value="" name="model_group" type="QString"/>
+  <Option value="Step 1: merge irrigation MZs, Sensors and FC to Grid" name="model_name" type="QString"/>
+  <Option value="" name="outputGroup" type="QString"/>
+  <Option name="outputOrder"/>
+  <Option name="parameterDefinitions" type="Map">
+    <Option name="fc_pwp_vw_as_points" type="Map">
+      <Option name="data_types" type="List">
+        <Option value="0" type="int"/>
+      </Option>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option value="FC, PWP, VW as Points" name="description" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
+      <Option value="" name="help" type="QString"/>
+      <Option name="metadata"/>
+      <Option value="fc_pwp_vw_as_points" name="name" type="QString"/>
+      <Option value="vector" name="parameter_type" type="QString"/>
+    </Option>
+    <Option name="grid_polygon" type="Map">
+      <Option name="data_types" type="List">
+        <Option value="2" type="int"/>
+      </Option>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option value="Grid Polygon" name="description" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
+      <Option value="" name="help" type="QString"/>
+      <Option name="metadata"/>
+      <Option value="grid_polygon" name="name" type="QString"/>
+      <Option value="vector" name="parameter_type" type="QString"/>
+    </Option>
+    <Option name="irr_mz_as_grid_with_sensor_fc_and_pwp" type="Map">
+      <Option value="true" name="create_by_default" type="bool"/>
+      <Option value="-1" name="data_type" type="int"/>
+      <Option name="default" type="QgsProcessingOutputLayerDefinition">
+        <Option type="Map">
+          <Option name="create_options" type="Map">
+            <Option value="windows-1252" name="fileEncoding" type="QString"/>
+          </Option>
+          <Option name="sink" type="Map">
+            <Option value="true" name="active" type="bool"/>
+            <Option value="1" name="type" type="int"/>
+            <Option value="TEMPORARY_OUTPUT" name="val" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+      <Option name="defaultGui" type="invalid"/>
+      <Option value="irr_MZ as Grid with Sensor, FC and PWP" name="description" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
+      <Option value="" name="help" type="QString"/>
+      <Option name="metadata" type="Map">
+        <Option value="native:renametablefield_1" name="_modelChildId" type="QString"/>
+        <Option value="irr_MZ as Grid with Sensor, FC and PWP" name="_modelChildOutputName" type="QString"/>
+        <Option value="native" name="_modelChildProvider" type="QString"/>
+      </Option>
+      <Option value="irr_mz_as_grid_with_sensor_fc_and_pwp" name="name" type="QString"/>
+      <Option value="sink" name="parameter_type" type="QString"/>
+      <Option value="true" name="supports_append" type="bool"/>
+      <Option value="true" name="supports_non_file_outputs" type="bool"/>
+    </Option>
+    <Option name="mzs_as_points" type="Map">
+      <Option name="data_types" type="List">
+        <Option value="0" type="int"/>
+      </Option>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option value="MZs as Points" name="description" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
+      <Option value="" name="help" type="QString"/>
+      <Option name="metadata"/>
+      <Option value="mzs_as_points" name="name" type="QString"/>
+      <Option value="vector" name="parameter_type" type="QString"/>
+    </Option>
+    <Option name="sensor_locations_as_points" type="Map">
+      <Option name="data_types" type="List">
+        <Option value="0" type="int"/>
+      </Option>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option value="Sensor Locations as Points" name="description" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
+      <Option value="" name="help" type="QString"/>
+      <Option name="metadata"/>
+      <Option value="sensor_locations_as_points" name="name" type="QString"/>
+      <Option value="vector" name="parameter_type" type="QString"/>
+    </Option>
+  </Option>
+  <Option name="parameterOrder"/>
+  <Option name="parameters" type="Map">
+    <Option name="fc_pwp_vw_as_points" type="Map">
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="873" name="component_pos_x" type="double"/>
+        <Option value="961" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="fc_pwp_vw_as_points" name="component_description" type="QString"/>
+      <Option value="78.19200950976548" name="component_height" type="double"/>
+      <Option value="618.7719396132813" name="component_pos_x" type="double"/>
+      <Option value="1385.0960047548826" name="component_pos_y" type="double"/>
+      <Option value="97.5438792265626" name="component_width" type="double"/>
+      <Option value="fc_pwp_vw_as_points" name="name" type="QString"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+    </Option>
+    <Option name="grid_polygon" type="Map">
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="540" name="component_pos_x" type="double"/>
+        <Option value="15" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="grid_polygon" name="component_description" type="QString"/>
+      <Option value="73.11479492812487" name="component_height" type="double"/>
+      <Option value="1492.7427477061603" name="component_pos_x" type="double"/>
+      <Option value="717.0542113251886" name="component_pos_y" type="double"/>
+      <Option value="110.81900444423698" name="component_width" type="double"/>
+      <Option value="grid_polygon" name="name" type="QString"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+    </Option>
+    <Option name="mzs_as_points" type="Map">
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="684.7543961728668" name="component_pos_x" type="double"/>
+        <Option value="81.15450786849796" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="mzs_as_points" name="component_description" type="QString"/>
+      <Option value="79.2866249999999" name="component_height" type="double"/>
+      <Option value="1256.6446055539232" name="component_pos_x" type="double"/>
+      <Option value="608.2927646441676" name="component_pos_y" type="double"/>
+      <Option value="114.56226084101552" name="component_width" type="double"/>
+      <Option value="mzs_as_points" name="name" type="QString"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+    </Option>
+    <Option name="sensor_locations_as_points" type="Map">
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="917" name="component_pos_x" type="double"/>
+        <Option value="19" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="sensor_locations_as_points" name="component_description" type="QString"/>
+      <Option value="90" name="component_height" type="double"/>
+      <Option value="623.842375" name="component_pos_x" type="double"/>
+      <Option value="833" name="component_pos_y" type="double"/>
+      <Option value="107.68475000000001" name="component_width" type="double"/>
+      <Option value="sensor_locations_as_points" name="name" type="QString"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+    </Option>
+  </Option>
+</Option>

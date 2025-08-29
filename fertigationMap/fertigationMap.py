@@ -367,7 +367,7 @@ if fer_MZ_gdf is not None or MZ_gdf is not None:
         os.makedirs(folder)
 
     # reduce the dataframe
-    if fer_MZ_gdf is not None:
+    if fer_MZ_gdf is not None or MZ_gdf is not None:
         gdf_out = gdf[['fer_l_ha','irr_l_ha','IN_mm','row', 'column', 'field_id','geometry']]
     else:
         gdf_out = gdf[['irr_l_ha','IN_mm','row', 'column', 'field_id','geometry']]
@@ -381,14 +381,15 @@ if fer_MZ_gdf is not None or MZ_gdf is not None:
     gdf_out.to_file(folder+"/"+field[i]+"_"+str(datetime.date.today())+".geojson", driver="GeoJSON")
     print(folder+"/"+field[i]+"_"+str(datetime.date.today())+".geojson")
 
+    plt.savefig("outputFiles/" + field[i] + "_ferti.png")
     #"outputFiles/irrigation_charts/" + field[i] + "_irr_" + str(date.today()) + ".png"
 
     # create zip file)
     shutil.make_archive(folder, 'zip', folder)
     
     
-"""
-	## Upload the Geoserver
+
+	## Upload to the GeoPortal
     try:
       with open(folder +'.zip', 'rb') as f:
         data = f.read()
@@ -429,4 +430,4 @@ if fer_MZ_gdf is not None or MZ_gdf is not None:
 
 	#filename = "water_left_" + university[i] + ".txt"
 	#wl_matrix_idw.to_csv(filename, sep=",", index=False)
-
+"""
