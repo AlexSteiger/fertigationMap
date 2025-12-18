@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Alexander Steiger
+
 #!/usr/bin/python3
 
 #Create the layer and the store on GeoServer (Updating the layer is not possible)
