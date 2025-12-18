@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Alexander Steiger
+
 #!/usr/bin/python3
 
 # Python program to find current weather details 
