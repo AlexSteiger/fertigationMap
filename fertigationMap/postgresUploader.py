@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Alexander Steiger
+
 #!/usr/bin/python3
 
 import pandas as pd
@@ -18,3 +21,4 @@ for i in range(0,3):
     #df = df.iloc[::6, :]   # select every nth row
     print(df)
     df.to_sql(postgreSQLTable[i], alchemyEngine, index=False, if_exists='replace');
+
