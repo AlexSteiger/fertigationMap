@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Alexander Steiger
+
 # predict_smc.py
 
 import pandas as pd
@@ -91,3 +94,4 @@ def predict_smc_next_day(gdf: pd.DataFrame, rain_df: pd.DataFrame, model_path: s
     gdf['smc_pred'] = gdf['smc_pred'].fillna(gdf['smc'])
 
     return gdf
+
